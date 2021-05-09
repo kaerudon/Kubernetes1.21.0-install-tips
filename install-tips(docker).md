@@ -1,5 +1,3 @@
-#Kubernetes1.21-docer-install-tips
-
 # はじめに
 #・vSphere ESXi/ vCener 仮想環境利用前提で記載しています。
 #・VMゲストOSはubuntu Server ver20.10前提で記載しています。
