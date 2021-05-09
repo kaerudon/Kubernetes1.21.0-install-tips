@@ -380,10 +380,10 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 	  selector:
 	    app: longhorn-ui
 	  ports:
-	  - name: http
-	    port: 80
-	    targetPort: http
-	    nodePort: 31000
+	    - name: http
+	      port: 80
+	      targetPort: http
+	      nodePort: 31000
 
     
 以下にてlonghornコンテナ、サービスをデプロイ
