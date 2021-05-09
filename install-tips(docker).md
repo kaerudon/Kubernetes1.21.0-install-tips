@@ -155,7 +155,7 @@ CRIインストールは以上となります。
 Kubernetesインストールを含めたKubernetes用のベースVM作成は以上となります。
 必要に応じてVMテンプレート化します。
 
-# 3.Kubernetes用で必要となるノード分、VMをデプロイしIP・ホスト名・/etc/hostsを記載修正
+# 3.Kubernetes用で必要となるノード分、VMをデプロイしIP、ホスト名、及び/etc/hostsを記載修正
 
 /etc/hostsファイルの記載修正（ローカルIP部分）し保存
 	
