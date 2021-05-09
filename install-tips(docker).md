@@ -289,10 +289,10 @@ metadata:
 spec:
   type: NodePort
   selector:
-  k8s-app: hubble-ui
+    k8s-app: hubble-ui
   ports:
-    - name: http
-    port: 80
+    - name: "http"
+      port: 80
       targetPort: 8081
       nodePort: 30001
       
