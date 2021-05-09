@@ -87,7 +87,7 @@ open-vm-toolsはOSインストール時に標準で入っているはず・・�
 
 #--------------------------------------
 # 2.kubaneters用のベースVMを作成
-# 2-1.CRIをインストール
+# 2-1.CRIインストール
 以下はkubaneters公式ページのDockerインストール
 
 ※公式を参照して以下バージョンにて
@@ -132,8 +132,8 @@ open-vm-toolsはOSインストール時に標準で入っているはず・・�
 
 	systemctl status docker
 
-CRI(コンテナランタイム)インストールは以上
-#--------------------------------------
+CRIインストールは以上となります。
+
 
 # 2-2.Kubernetesインストール(ver.1.21.0) 以下はkubaneters公式ページより抜粋
 
@@ -367,7 +367,23 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 
 以下修正例
 
-	aaa
+	kind: Service
+	apiVersion: v1
+	metadata:
+      labels:
+        app: longhorn-ui
+      name: longhorn-frontend
+      namespace: longhorn-system
+	spec:
+	  type: NodePort
+	  selector:
+	    app: longhorn-ui
+	  ports:
+	  - name: http
+	    port: 80
+	    targetPort: http
+	    nodePort: 31000
+
     
 以下にてlonghornコンテナ、サービスをデプロイ
 	
