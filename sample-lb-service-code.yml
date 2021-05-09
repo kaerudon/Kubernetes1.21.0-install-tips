@@ -13,3 +13,4 @@ spec:
       nodePort: 30082
   selector:
     app: sample-app
+    
