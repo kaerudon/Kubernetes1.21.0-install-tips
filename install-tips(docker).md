@@ -216,7 +216,7 @@ Kubernetesクラスタ作成完了後に表示されるnode 追加用のコマ�
 
 
 # 5.CNIインストール(master nodeで実行)
-3パターン載せていますのでいずれかを選択しインストールします。
+※3パターン載せていますのでいずれかを選択しインストールします。
 
 # 5-パターン1 chilinum(ver1.9)インストール(master nodeで実行)
 参考URL:https://docs.cilium.io/en/v1.9/gettingstarted/k8s-install-default/
@@ -255,6 +255,7 @@ control-plane-port:デフォルト6443
 hash:コマンドを控えていなかった場合、master nodeで以下を実行した結果を記載
 
 	sudo kubeadm token create
+	
 	openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \
 	openssl dgst -sha256 -hex | sed 's/^.* //'
 
@@ -303,9 +304,24 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 
 	vim quick-hubble-install.yaml
 	
-以下修正例
+以下修正箇所
 	
-	aaa
+	kind: Service
+	apiVersion: v1
+	  metadata:
+	  name: hubble-ui
+	  labels:
+	    k8s-app: hubble-ui
+	  namespace: kube-system
+	spec:
+	  type: NodePort
+	  selector:
+	    k8s-app: hubble-ui
+	  ports:
+	    - name: http
+	    - port: 80
+	    - targetPort: 8081
+	    - nodePort: 30001
       
 以下にてhubbleコンテナ、サービスをデプロイ
 
@@ -342,23 +358,8 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 	vim quick-hubble-install.yaml
 
 以下修正例
-	
-	kind: Service
-	apiVersion: v1
-	metadata:
-  	labels:
-    	app: longhorn-ui
-  	name: longhorn-frontend
-  	namespace: longhorn-system
-	spec:
-  	type: NodePort
-  	selector:
-    	app: longhorn-ui
-  	ports:
-  	- name: http
-    	port: 80
-    	targetPort: http
-    	nodePort: 31000
+
+	aaa
     
 以下にてlonghornコンテナ、サービスをデプロイ
 	
