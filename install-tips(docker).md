@@ -354,3 +354,4 @@ kubectl get svc
 
 #以上です。
 
+
