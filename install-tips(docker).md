@@ -304,11 +304,11 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 
 	vim quick-hubble-install.yaml
 	
-以下修正箇所
+以下修正箇所は以下サンプル参照
 	
 	kind: Service
 	apiVersion: v1
-	  metadata:
+	metadata:
 	  name: hubble-ui
 	  labels:
 	    k8s-app: hubble-ui
@@ -319,9 +319,9 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 	    k8s-app: hubble-ui
 	  ports:
 	    - name: http
-	    - port: 80
-	    - targetPort: 8081
-	    - nodePort: 30001
+	      port: 80
+	      targetPort: 8081
+	      nodePort: 30001
       
 以下にてhubbleコンテナ、サービスをデプロイ
 
