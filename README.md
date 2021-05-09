@@ -1,1 +1,0 @@
-# Kubernetes1.21-docer-install-tips
