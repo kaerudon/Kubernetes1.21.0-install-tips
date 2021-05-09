@@ -43,9 +43,9 @@ sudo vim /etc/hosts
 127.0.0.1 master.test.lan
 192.168.1.1 master master.test.lan
 192.168.1.2 node1 node1.test.lan
-192.168.1.3 node2 node2.test.lan
-192.168.1.4 node3 node3.test.lan
-192.168.1.10 lb lb.test.lan #外部LoadBarancerを作成する場合などその他必要なものを事前に記載
+192.168.1.3 node2 node1.test.lan
+192.168.1.4 node3 node1.test.lan
+192.168.1.10 lb lb.test.lan#外部LoadBarancerを作成する場合などその他必要なものを事前に記載
 
 iptablesレガシーバイナリがインストールされていることを確認しiptablesレガシーバージョンに切り替え
 kubaneters公式ページより抜粋
