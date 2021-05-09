@@ -93,6 +93,7 @@ open-vm-toolsはOSインストール時に標準で入っているはず・・�
 
 	sudo apt-get update && apt-get install -y \
 	sudo apt-transport-https ca-certificates curl software-properties-common gnupg2
+	
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 	sudo add-apt-repository \
@@ -111,11 +112,11 @@ open-vm-toolsはOSインストール時に標準で入っているはず・・�
   	"exec-opts": ["native.cgroupdriver=systemd"],
   	"log-driver": "json-file",
   	"log-opts": {
-				"max-size": "100m"
+	"max-size": "100m"
   	},
-  		"storage-driver": "overlay2"
-		}
-		EOF
+  	"storage-driver": "overlay2"
+	}
+	EOF
 
 	sudo mkdir -p /etc/systemd/system/docker.service.d
 	sudo systemctl daemon-reload
@@ -143,6 +144,7 @@ CRI(コンテナランタイム)インストールは以上
 	sudo apt-mark hold kubelet kubeadm kubectl
 
 	sudo poweroff
+	
 Kubernetesインストールを含めたKubernetes用のベースVM作成は以上となります。
 必要に応じてVMテンプレート化します。
 
@@ -267,9 +269,9 @@ kubectl label node <node名> node-role.kubernetes.io/node=
 
 実行例
 	
-	kubectl label node node1.home.lan node-role.kubernetes.io/node=
-	kubectl label node node2.home.lan node-role.kubernetes.io/node=
-	kubectl label node node3.home.lan node-role.kubernetes.io/node=
+	kubectl label node node1.test.lan node-role.kubernetes.io/node=
+	kubectl label node node2.test.lan node-role.kubernetes.io/node=
+	kubectl label node node3.test.lan node-role.kubernetes.io/node=
 
 以上でKubernetesクラスタ環境が一通り構築完了となります。
 以下は普段よく準備するものかと思いますので、判断の上適宜インストールください。
@@ -299,26 +301,11 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 
 ダウンロードしたquick-hubble-install.yaml内のUIサービス(hubble-ui)を以下の通りに修正（以下はnodeport 30001で公開）
 
-以下修正サンプル
-
 	vim quick-hubble-install.yaml
-	#Source: cilium/templates/hubble-ui-service.yaml
-	kind: Service
-	apiVersion: v1
-	metadata:
- 	name: hubble-ui
- 	labels:
-    k8s-app: hubble-ui
- 	namespace: kube-system
-	spec:
- 	type: NodePort
- 	selector:
-   	k8s-app: hubble-ui
- 	ports:
-    - name: "http"
-      port: 80
-      targetPort: 8081
-      nodePort: 30001
+	
+以下修正例
+	
+	aaa
       
 以下にてhubbleコンテナ、サービスをデプロイ
 
