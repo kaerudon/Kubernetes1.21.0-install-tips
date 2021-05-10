@@ -304,7 +304,7 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 
 # その他-その1 cilium用のGUI画面(hubbleインストール)
 個人的にはコンテナ間の通信がGUIで見れたりするので便利かと思われます。
-※但しcron jobはKubernetes ver 1.21.0系では記載修正が必要そのままではデプロイできない。修正内容も現状煮詰めていません。
+※但しcron jobはKubernetes ver 1.21.0系では記載修正が必要でそのままではデプロイできない。修正内容も現状煮詰めていません。
 
 	curl -fsSL -o quick-hubble-install.yaml https://raw.githubusercontent.com/cilium/cilium/v1.9/install/kubernetes/quick-hubble-install.yaml
 
