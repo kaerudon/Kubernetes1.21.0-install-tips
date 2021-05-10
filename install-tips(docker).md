@@ -302,7 +302,7 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 	
 	kubectl get pod -A
 
-その他-その1 cilium用のGUI画面(hubbleインストール)
+# その他-その1 cilium用のGUI画面(hubbleインストール)
 個人的にはコンテナ間の通信がGUIで見れたりするので便利かと思われます。
 ※但しcron jobはKubernetes ver 1.21.0系では記載修正が必要そのままではデプロイできない。修正内容も現状煮詰めていません。
 
@@ -342,7 +342,7 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 	
 	http://各nodeのIP:30001でGUIにアクセス可能。
 
-# その他-その1 コンテナレジストリ harborインストール(helm経由でのインストールパターン)
+# その他-その2 コンテナレジストリ harborインストール(helm経由でのインストールパターン)
 
 	helm repo add harbor https://helm.goharbor.io
 	helm repo update
@@ -357,7 +357,7 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
   	--set externalURL=http://192.168.1.2:30002 \
   	--set harborAdminPassword=<ログイン時パスワード>
 
-# その他-その2 コンテナ用の分散ストレージlonghornインストール（してみましたのでご参考まで）
+# その他-その3 コンテナ用の分散ストレージlonghornインストール（してみましたのでご参考まで）
 参URL:https://longhorn.io/docs/1.1.1/deploy/install/install-with-kubectl/
 
 	curl -fsSL -o longhorn.yaml https://raw.githubusercontent.com/longhorn/longhorn/v1.1.1/deploy/longhorn.yaml
