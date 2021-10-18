@@ -349,7 +349,7 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
 
 以下longhorn-uiのサービス部分をNodePortに変更
 
-	vim quick-hubble-install.yaml
+	vim longhorn.yaml
 
 以下修正例
 
