@@ -92,8 +92,8 @@ open-vm-toolsはOSインストール時に標準で入っているはず・・�
 
 # 2.kubaneters用のベースVMを作成　
 # 2-1.CRI（cri-o）インストール、以下はkubaneters公式ページより抜粋
-# cri-o OSリリースサポート状況確認は以下URLにて(2022年4月時点で ubuntu 21.04まで)
-# https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/
+  cri-o OSリリースサポート状況確認は以下URLにて(2022年4月時点で ubuntu 21.04まで)
+  https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/
 
 1項で作成したベースVMからVMクローン、もしくはVMテンプレートからVMをデプロイし起動し、SSHでログインします。
 
