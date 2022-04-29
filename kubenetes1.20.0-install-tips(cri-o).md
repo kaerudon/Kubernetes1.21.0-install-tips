@@ -91,7 +91,7 @@ open-vm-toolsはOSインストール時に標準で入っているはず・・�
 
 
 # 2.kubaneters用のベースVMを作成　
-# 2-1.CRI（containerd）インストール、以下はkubaneters公式ページより抜粋
+# 2-1.CRI（cri-o）インストール、以下はkubaneters公式ページより抜粋
 
 1項で作成したベースVMからVMクローン、もしくはVMテンプレートからVMをデプロイし起動し、SSHでログインします。
 
