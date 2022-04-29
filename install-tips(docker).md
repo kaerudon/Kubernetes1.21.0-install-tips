@@ -226,6 +226,7 @@ Kubernetesクラスタ作成完了後に表示されるnode 追加用のコマ�
 ※3パターン載せていますのでいずれかを選択しインストールします。
 
 # 5-パターン1 chilinum(ver1.9)インストール(master nodeで実行)
+参考URL(centos8 stream+kubernetes 1.23.6):https://docs.cilium.io/en/stable/gettingstarted/k8s-install-kubeadm/
 参考URL:https://docs.cilium.io/en/v1.9/gettingstarted/k8s-install-default/
 
 	curl -fsSL -o cilium-quick-install.yaml https://raw.githubusercontent.com/cilium/cilium/v1.9/install/kubernetes/quick-install.yaml
