@@ -359,14 +359,14 @@ ingress-systemのネームスペース上にコンテナ稼働させるのため
   	--set harborAdminPassword=<ログイン時パスワード>
 
 # その他-その3 コンテナ用の分散ストレージlonghornインストール（してみましたのでご参考まで）
-参URL:https://longhorn.io/docs/1.1.1/deploy/install/install-with-kubectl/
+参URL:https://longhorn.io/docs/1.2.4/deploy/install/install-with-kubectl/
 
-	curl -fsSL -o longhorn.yaml https://raw.githubusercontent.com/longhorn/longhorn/v1.1.1/deploy/longhorn.yaml
+	curl -fsSL -o longhorn.yaml https://raw.githubusercontent.com/longhorn/longhorn/v1.2.4/deploy/longhorn.yaml
 
 以下longhorn-uiのサービス部分をNodePortに変更
 
-	vim quick-hubble-install.yaml
-
+	vim longhorn.yaml
+	
 以下修正例
 
 	kind: Service
